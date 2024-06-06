@@ -5,18 +5,111 @@ This project is a backend service for a shopping cart application. The service p
 **Entities**
 
 Shopping Cart
-**Shopping Cart Entity**: Manages the items added to the shopping cart by the customer.
+**Shopping Cart Entity**: Manages the items added to the shopping cart by the customer. 
+
 **Product Entity**: Manages the products available for purchase.
+
 **Order Entity**: Manages the orders placed by customers.
+
 **Customer Entity**: Manages the customers using the shopping cart service
 
-I have Created following API's for Items in the Cart
+I have Created following API's for Items in the Cart 
 
 **1) Add to Cart**
-**2) Get the Items in the Cart**
+
+**End point : http://localhost:8080/api/add-itemstocart**
+
+Sample Input Format for JSON:
+[
+    {
+      "name": "Trash bag",
+      "price": 10.99,
+      "quantity": 2
+    },
+    {
+      "name": "Sofa",
+      "price": 25.50,
+      "quantity": 1
+    },
+    {
+      "name": "Television",
+      "price": 155.75,
+      "quantity": 3
+    }
+]
+
+**2) Get the Items in the Cart**(This Api is for viewing all the Cart Items)
+
+**End Point :http://localhost:8080/api/viewcart**
+
+Expected Output Format:
+
+[
+    {
+        "id": 1,
+        "name": "Product 1",
+        "price": 10.99,
+        "quantity": 2
+    },
+    {
+        "id": 2,
+        "name": "Product 2",
+        "price": 25.5,
+        "quantity": 1
+    },
+    {
+        "id": 3,
+        "name": "Product 3",
+        "price": 15.75,
+        "quantity": 3
+    },
+    {
+        "id": 4,
+        "name": "Trash bag",
+        "price": 10.99,
+        "quantity": 2
+    },
+    {
+        "id": 5,
+        "name": "Sofa",
+        "price": 25.5,
+        "quantity": 1
+    },
+    {
+        "id": 6,
+        "name": "Television",
+        "price": 155.75,
+        "quantity": 3
+    }
+]
+
 **3) Delete the Item From Cart**
+
+**End Point: http://localhost:8080/api/delete/1** Item 1 should be deleted from the cart
+
+Sample Input:
+{
+     "id": 1,
+    "quantity": 6
+}
+
+Sample Output:
+Item has been deleted
+
 **4) Update the Item Quantity in the Cart**
 
+**End Point: http://localhost:8080/api/update/2** It Should update the item no 2 in the cart
+
+Sample Input:
+{
+     "id": 2,
+    "quantity": 66
+}
+
+Expected output:
+It Should be able to update the quantity of 66 for the item no 2 in the cart
+
+**Apart from CartItem service i have also create a relation between order and customer and cart items and the Apis are as follows**
 
 **4) GET - http://localhost:8080/api/getAllProducts** 
 
@@ -46,9 +139,10 @@ I have Created following API's for Items in the Cart
 
 
  **5) POST - http://localhost:8080/api/placeOrder**
- 
- Request Payload   
- {
+
+ **Sample Input**
+
+    {
      "orderDescription": "Test Order Description",
      
      "cartItems": [
@@ -65,6 +159,7 @@ I have Created following API's for Items in the Cart
      "customerName": "Krishna Chaitanya"
  }
  
+ 
  **Response** 
  
  
@@ -76,12 +171,12 @@ I have Created following API's for Items in the Cart
       "orderDescription": "This order is for my friend's Birthday"
   }
   
-  **3 GET - http://localhost:8080/api/getOrder/3**
+  **6) GET - http://localhost:8080/api/getOrder/4**(this is the relation between Order,Customer and cart Item)
   
   Response
   
   {
-      "id": 3,
+      "id": 4,
       "orderDescription": "This order is for my friend's Engagement",
       
       "customer": {
