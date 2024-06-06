@@ -1,0 +1,4 @@
+# Project exclude paths
+/shoppingcartCrudSpringBoot-main/.gradle/
+/shoppingcartCrudSpringBoot-main/build/
+/shoppingcartCrudSpringBoot-main/build/classes/java/main/

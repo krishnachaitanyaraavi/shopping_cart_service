@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+  <component name="SonarLintModuleSettings">
+    <option name="uniqueId" value="cfa390ac-ff4c-44b8-83ab-06707e1bb947" />
+  </component>
+  <component name="TestModuleProperties" production-module="shoppingcartCrudSpringBoot-main.main" />
+</module>
